@@ -1,0 +1,148 @@
+{% extends 'WebAsha/base.html' %}
+{% load static %}
+{% block title %} BOOK APPOINTMENT{% endblock %}
+
+{% block body %}
+<div class="form-container">
+    <form id="booking-form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+</div>
+
+<!-- Modal HTML -->
+<div id="thankyou-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Thank You!</h2>
+        <p>Thank you for booking. We will reach you soon!</p>
+    </div>
+</div>
+
+<script>
+    // Get modal element and close button
+    var modal = document.getElementById('thankyou-modal');
+    var closeBtn = document.querySelector('.close-btn');
+
+    // Function to show the modal
+    function showThankYouModal() {
+        modal.style.display = 'block';
+    }
+
+    // Function to hide the modal
+    function hideThankYouModal() {
+        modal.style.display = 'none';
+    }
+
+    // Attach event listener to the form submit event
+    document.getElementById('booking-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        showThankYouModal(); // Show the modal
+        setTimeout(function() {
+            document.getElementById('booking-form').submit(); // Submit the form after showing the modal
+        }, 2000); // Adjust time if needed
+    });
+
+    // Close the modal when the close button is clicked
+    closeBtn.addEventListener('click', hideThankYouModal);
+
+    // Close the modal if the user clicks outside of it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            hideThankYouModal();
+        }
+    }
+</script>
+
+<style>
+    /* General Body Styling */
+    body {
+        background-color: #86c1fc; /* Lighter blue background for the entire page */
+        color: #333; /* Darker text color for better readability */
+        text-align: center; /* Center align text */
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+        font-family: Arial, sans-serif; /* Font family for the entire page */
+    }
+
+    /* Form Container Styling */
+    .form-container {
+        display: flex; /* Use flexbox for centering */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        height: 100vh; /* Full viewport height */
+        padding: 40px; /* Padding around the container */
+        box-sizing: border-box; /* Ensure padding is included in height and width */
+    }
+
+    /* Form Styling */
+    form {
+        background-color: #fff; /* White background for form */
+        padding: 30px; /* Padding inside the form */
+        border-radius: 15px; /* Rounded corners for the form */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
+        max-width: 600px; /* Maximum width of the form */
+        width: 100%; /* Full width within container */
+    }
+
+    .submit-button {
+        background-color: #1A76D1; /* Background color of the submit button */
+        color: #fff; /* Text color of the submit button */
+        border: none; /* Remove border */
+        padding: 15px 30px; /* Add padding inside the button */
+        cursor: pointer; /* Pointer cursor on hover */
+        text-transform: uppercase; /* Uppercase text */
+        font-size: 16px; /* Font size of the button text */
+        border-radius: 5px; /* Rounded corners for the button */
+        transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    }
+
+    .submit-button:hover {
+        background-color: #155a9d; /* Darker shade for hover effect */
+    }
+
+    /* Modal Styling */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1000; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0, 0, 0, 0.6); /* Black background with opacity */
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto; /* Center the modal horizontally */
+        padding: 30px;
+        border: 1px solid #888;
+        width: 80%; /* Adjust width as needed */
+        max-width: 600px; /* Maximum width of the modal */
+        border-radius: 10px; /* Rounded corners for the modal */
+        text-align: center; /* Center align text in the modal */
+    }
+
+    .modal-content h2 {
+        color: #1A76D1; /* Color for the header */
+        margin-top: 0; /* Remove top margin */
+    }
+
+    .close-btn {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close-btn:hover,
+    .close-btn:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+{% endblock %}
