@@ -1,83 +1,85 @@
-Mediplus Django Website
-Overview
-Mediplus is a healthcare management system built using Django, designed to facilitate online appointment booking and contact management. This application aims to streamline patient interaction and administrative processes within healthcare facilities.
+# Mediplus Django Website
 
-Features
-User Authentication: Secure login and registration.
-Appointment Booking: Easy booking system for patients to schedule appointments.
-Contact Form: Integrated contact form for inquiries and feedback.
-Responsive Design: Mobile-friendly interface using Bootstrap.
-Technology Stack
-Frontend: HTML, CSS, JavaScript, Bootstrap
-Backend: Django
-Database: SQLite
-Installation
-To get a local copy up and running, follow these steps:
+### Overview
 
-Prerequisites
-Python 3.x
-Setup
-Clone the repository:
+Mediplus is a basic healthcare management website built using Django. It includes features like online appointment booking, contact management, and a blog. This project is a great starting point for anyone looking to understand and start making Django projects.
 
-bash
-Copy code
-git clone https://github.com/yourusername/mediplus.git
-cd mediplus
-Create and activate a virtual environment:
+### Features
 
-bash
-Copy code
-python3 -m venv env
-source env/bin/activate
-Install dependencies:
+- **Appointment Booking**: Simple form for patients to schedule appointments.
+- **Services Page**: Information about the healthcare services offered.
+- **Contact Form**: Form for users to send inquiries and feedback.
+- **Blog Pages**: Section for healthcare-related articles and updates.
+- **Responsive Design**: Mobile-friendly layout using Bootstrap.
 
-bash
-Copy code
-pip install -r requirements.txt
-Apply migrations:
+### Technology Stack
 
-bash
-Copy code
-python manage.py migrate
-Create a superuser:
+- **Frontend**: HTML, CSS, JavaScript, Bootstrap
+- **Backend**: Django
+- **Database**: SQLite
 
-bash
-Copy code
-python manage.py createsuperuser
-Run the development server:
+### Installation
 
-bash
-Copy code
-python manage.py runserver
-Access the application:
+To set up and run this project on your local machine, follow these steps:
 
-Open your web browser and navigate to http://127.0.0.1:8000/.
+#### Prerequisites
 
-Usage
-Admin Dashboard: Access the admin interface at http://127.0.0.1:8000/admin/ to manage appointments and user inquiries.
-User Registration: Patients can register and log in to book appointments.
-Deployment
-For production deployment, you might consider using a more robust database like PostgreSQL and setting up a web server such as Gunicorn with Nginx. Below is a basic deployment guide using Gunicorn:
+- Python 3.x
 
-Collect static files:
+#### Setup
 
-bash
-Copy code
-python manage.py collectstatic
-Run Gunicorn server:
+1. **Clone the repository:**
 
-bash
-Copy code
-gunicorn mediplus.wsgi:application --bind 0.0.0.0:8000
-Configure Nginx (optional):
+    ```bash
+    git clone https://github.com/Ladybug-Rupali/mediplusDjangoWebsite.git
+    cd mediplus
+    ```
 
-Set up Nginx as a reverse proxy to forward requests to Gunicorn.
+2. **Create and activate a virtual environment:**
 
-Contributing
-Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
+    ```bash
+    pip install virtualenv
+    
+    virtualenv venv
+    
+    venv\scripts\activate
+    ```
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+3. **Install the required packages:**
 
-Contact
-For any inquiries, please contact yourname@domain.com.
+    ```bash
+    pip install django
+    ```
+
+4. **Apply the database migrations:**
+
+    ```bash
+    python manage.py makemigrations
+    
+    python manage.py migrate
+    ```
+
+5. **Run the development server:**
+
+    ```bash
+    python manage.py runserver
+    ```
+
+6. **Open the website:**
+
+    Open your web browser and go to `https://127.0.0.1:8000/webasha/home`.
+
+### Usage
+
+- **Booking Form**: Book an appointment online.
+- **Services Page**: Learn about the services offered.
+- **Contact Form**: Contact form,
+- **Blog Pages**: Read healthcare-related articles.
+
+### Contributing
+
+Contributions are welcome! If you have suggestions or find any bugs, please fork the repository and submit a pull request.
+
+### Contact
+
+For any questions, please contact [rplsgrv@gmail.com](mailto:rplsgrv@gmail.com).
