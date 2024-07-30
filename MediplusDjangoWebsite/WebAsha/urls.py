@@ -9,6 +9,7 @@ urlpatterns = [
     path('contact/',view_contact,name='contact'),
     path('appointment/',view_appointment,name='appointment'),
     path('thankyou/',view_thakyou,name='thankyou'),
+    path('thanks/',view_thanks,name='thanks'),
     path('ear/', ear_treatment, name='ear'),
     path('blood/', blood_treatment, name='blood'),
     path('heart/', heart_treatment, name='heart'),
@@ -27,6 +28,7 @@ urlpatterns = [
     path('othercases/',view_our_cases,name='ourcases'),
     path('about/',view_about,name='about'),
     path('doctors/',view_doctors,name='doctors'),
+    path('newsletter/', subscribe_newsletter, name='newsletter'),
 
     
    

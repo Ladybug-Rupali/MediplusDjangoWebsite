@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Mediplus</title>
+    <style>
+        /* General Body Styling */
+        body {
+            background-color: #f4f4f4; /* Light grey background */
+            color: #333; /* Darker text color for readability */
+            font-family: Arial, sans-serif; /* Font family for the page */
+            text-align: center; /* Center align text */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 800px; /* Max width of the container */
+            margin: 50px auto; /* Center the container horizontally with margin */
+            padding: 20px; /* Padding inside the container */
+            background-color: #fff; /* White background for the container */
+            border-radius: 8px; /* Rounded corners for the container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+        }
+
+        /* Header Styling */
+        h1 {
+            color: #1A76D1; /* Primary color for header */
+            font-size: 2.5em; /* Font size for the header */
+            margin-bottom: 20px; /* Space below the header */
+        }
+
+        /* Paragraph Styling */
+        p {
+            font-size: 1.2em; /* Font size for paragraphs */
+            margin-bottom: 20px; /* Space below each paragraph */
+        }
+
+        /* Button Styling */
+        .button {
+            display: inline-block; /* Inline block for button display */
+            padding: 15px 30px; /* Padding inside the button */
+            color: #fff; /* Text color for the button */
+            background-color: #1A76D1; /* Background color of the button */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners for the button */
+            text-decoration: none; /* Remove underline */
+            font-size: 0.8em; /* Font size of the button text */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        .button:hover {
+            background-color: #155a9d; /* Darker shade for hover effect */
+        }
+
+        /* Footer Styling */
+        .footer {
+            margin-top: 40px; /* Space above the footer */
+            font-size: 0.9em; /* Font size for footer text */
+            color: #666; /* Grey text color for footer */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thank You for Subscribing!</h1>
+        <p>We appreciate your interest in our newsletter. You will start receiving updates and offers shortly.</p>
+        <p>If you have any questions or need further assistance, feel free to <a href="{% url 'contact' %}">contact us</a>.</p>
+        <div>
+            <button><a href="{% url 'home' %}">Back to home</a></button>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Mediplus Hospital. All rights reserved.</p>
+        </div>
+
+    </div>
+</body>
+</html>

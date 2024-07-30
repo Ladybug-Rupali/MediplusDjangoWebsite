@@ -1,4 +1,4 @@
-from WebAsha.models import booking
+from WebAsha.models import *
 from django import forms
 
 
@@ -10,3 +10,9 @@ class bookingForm(forms.ModelForm):
             'date': forms.DateInput(attrs={'type': 'date'}),  # HTML5 date picker
             'time': forms.TimeInput(attrs={'type': 'time'}),  # HTML5 time picker
         }
+
+
+class NewsletterSubscriptionForm(forms.ModelForm):
+    class Meta:
+        model = NewsletterSubscription
+        fields = ['email']

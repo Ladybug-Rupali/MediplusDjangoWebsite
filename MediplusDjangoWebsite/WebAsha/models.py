@@ -24,6 +24,15 @@ class booking(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+
+class NewsletterSubscription(models.Model):
+    email = models.EmailField(unique=True,max_length=254)
+    subscribed_at = models.DateTimeField(auto_now_add=True)
+
+    def _str_(self):
+        return self.email 
 
 
 

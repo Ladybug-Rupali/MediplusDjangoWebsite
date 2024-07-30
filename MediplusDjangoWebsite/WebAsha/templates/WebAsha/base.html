@@ -51,7 +51,7 @@
 <body>
 	<!-- End Preloader -->
 
-	<!-- Get Pro Button -->
+	<!-- Get Pro Button
 	<ul class="pro-features">
 		<a class="get-pro" href="#">Get Pro</a>
 		<li class="big-title">Pro Version Available on Themeforest</li>
@@ -67,7 +67,7 @@
 			<a href="https://themeforest.net/item/mediplus-medical-and-doctor-html-template/26665910" target="_blank"
 				class="btn">Buy Pro Version</a>
 		</div>
-	</ul>
+	</ul> -->
 
 	<!-- Header Area -->
 	<header class="header">
@@ -88,9 +88,9 @@
 					<div class="col-lg-6 col-md-7 col-12">
 						<!-- Top Contact -->
 						<ul class="top-contact">
-							<li><i class="fa fa-phone"></i>+880 1234 56789</li>
+							<li><i class="fa fa-phone"></i>+91 8928****67</li>
 							<li><i class="fa fa-envelope"></i><a
-									href="mailto:support@yourmail.com">support@yourmail.com</a></li>
+									href="mailto:support@yourmail.com">support@mediplus.com</a></li>
 						</ul>
 						<!-- End Top Contact -->
 					</div>
@@ -367,12 +367,13 @@
 					<div class="col-lg-3 col-md-6 col-12">
 						<div class="single-footer">
 							<h2>Newsletter</h2>
-							<p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit
-								amet, consectetur adipisicing elit,</p>
-							<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
+							<p>subscribe to our newsletter to get allour news in your inbox.</p>
+								<form method="post" action="{% url 'newsletter' %}">
+									{% csrf_token %}>
 								<input name="email" placeholder="Email Address" class="common-input"
 									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'"
 									required="" type="email">
+		
 								<button class="button"><i class="icofont icofont-paper-plane"></i></button>
 							</form>
 						</div>

@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from WebAsha.models import contact
+from WebAsha.models import *
 from django.http import HttpResponse
-from .forms import bookingForm
+from .forms import *
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.conf import settings
-from django.contrib import messages
+
 
 
 # Create your views here.
@@ -17,7 +17,7 @@ def view_home(request):
 
 
 def view_doctos(request):
-    resp=render(request,'WebAsha/doctos.html')
+    resp=render(request,'WebAsha/doctors.html')
     return resp
 
 
@@ -45,6 +45,10 @@ def view_contact(request):
         
 def view_thakyou(request):
     resp=render(request,'WebAsha/thankyou.html')
+    return resp
+
+def view_thanks(request):
+    resp=render(request,'WebAsha/newsthanks.html')
     return resp
 
 
@@ -122,4 +126,14 @@ def view_about(request):
 
 def view_doctors(request):
     return render(request,'WebAsha/doctors.html')
+
+def subscribe_newsletter(request):
+    if request.method == 'POST':
+        form = NewsletterSubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request,'WebAsha/newsthanks.html')
+    else:
+        form = NewsletterSubscriptionForm()
+        return render(request, 'WebAsha/base.html',{'form':form})
 
